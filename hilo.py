@@ -229,3 +229,20 @@ def main():
                 print("Command: [ " + cmmnd + " ] Not Found!")
             except IndexError:
                 pass             
+    def login():
+    clear()
+    user = "tthinh"
+    passwd = "1002"
+    username = input("⚡ Username: ")
+    password = getpass.getpass(prompt='⚡ Password: ')
+    if username != user or password != passwd:
+        print("")
+        print("⚡ Xin Lỗi Bạn Đã Nhập Sai Pass")
+        sys.exit(1)
+    elif username == user and password == passwd:
+        print("⚡ Welcome To Ddos-Proxy [v2]")
+        time.sleep(0.3)
+        ascii_vro()
+        main()
+
+login()
