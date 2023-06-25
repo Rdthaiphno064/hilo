@@ -122,7 +122,7 @@ def title():
 def main():
     title()
     while(True):
-        cnc = input('''\x1b  Chọn Methods Để Attack:''')
+        cnc = input('''Chọn Methods Để Attack:''')
         if cnc == "layer7" or cnc == "LAYER7" or cnc == "L7" or cnc == "l7":
             layer7()
         if cnc == "methods" or cnc == "METHODS" or cnc == "MS" or cnc == "ms":
@@ -229,7 +229,7 @@ def main():
                 print("Command: [ " + cmmnd + " ] Not Found!")
             except IndexError:
                 pass             
-    def login():
+def login():
     clear()
     user = "tthinh"
     passwd = "1002"
